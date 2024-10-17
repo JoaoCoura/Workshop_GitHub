@@ -36,15 +36,42 @@ public class Controler {
         });
 
         botaoMenos.addActionListener(e -> {
-
+        	if(operacao.isEmpty()){// Se a string da operação for vazia
+                operacao = "0 - ";// troca o valor da string para o valor ao lado
+                frame.atualizarLabel(operacao);//atualiza no visor da calculadora a operação
+            }else{
+                if(primeiroValor){// se o usuário ainda não apertou a operação, continua pegando números. Caso tenha apertado o botão ele não deixa mais
+                    operacao += " - "; // concatena a string com o valor ao lado
+                    frame.atualizarLabel(operacao); // atualiza no visor da calculadora a operação
+                    primeiroValor = false; // troca o estado para falso para o usuário inserir o segundo número
+                }
+            }
         });
 
         botaoMul.addActionListener(e -> {
-
+        	if(operacao.isEmpty()){// Se a string da operação for vazia
+                operacao = "0 * ";// troca o valor da string para o valor ao lado
+                frame.atualizarLabel(operacao);//atualiza no visor da calculadora a operação
+            }else{
+                if(primeiroValor){// se o usuário ainda não apertou a operação, continua pegando números. Caso tenha apertado o botão ele não deixa mais
+                    operacao += " * "; // concatena a string com o valor ao lado
+                    frame.atualizarLabel(operacao); // atualiza no visor da calculadora a operação
+                    primeiroValor = false; // troca o estado para falso para o usuário inserir o segundo número
+                }
+            }
         });
 
         botaoDiv.addActionListener(e -> {
-
+        	if(operacao.isEmpty()){// Se a string da operação for vazia
+                operacao = "0 / ";// troca o valor da string para o valor ao lado
+                frame.atualizarLabel(operacao);//atualiza no visor da calculadora a operação
+            }else{
+                if(primeiroValor){// se o usuário ainda não apertou a operação, continua pegando números. Caso tenha apertado o botão ele não deixa mais
+                    operacao += " / "; // concatena a string com o valor ao lado
+                    frame.atualizarLabel(operacao); // atualiza no visor da calculadora a operação
+                    primeiroValor = false; // troca o estado para falso para o usuário inserir o segundo número
+                }
+            }
         });
 
         botaoIgual.addActionListener(e -> {
